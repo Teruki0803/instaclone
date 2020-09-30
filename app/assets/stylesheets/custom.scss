@@ -1,25 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "bulma";
 
 h1{
-  font-size: 30px;
+    font-size: 30px;
 
 }
 
 .notification:not(:last-child){
-margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .profile_image {
-border-radius: 50%;
+ border-radius: 50%;
 }
 
 .main-image {
-height: 940px;
-background-image: url(meal.png);
-background-repeat: no-repeat;
-background-size: contain;
+	height: 940px;
+	background-image: url(meal.png);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 ul{
@@ -27,54 +27,54 @@ list-style-type:none;
 }
 
 a{
-color:black;
+	color:black;
 }
 
 .list-inline > li{
-padding-top: 44px;
+	padding-top: 44px;
 }
 
 .jumbotron{
-text-align:center;
+	text-align:center;
 }
 
 .actions{
-margin-top:10px;
+	margin-top:10px;
 }
 .label{
-color:black;
+	color:black;
 }
 
 .field{
-margin-top:30px;
+	margin-top:30px;
 }
 
 .input[type="file"]{
-display: inline-block;
+	display: inline-block;
 }
 
 .stats {
-overflow: auto;
-margin-top: 0;
-padding: 0;
-a {
-  float: left;
-  padding: 0 10px;
-  border-left: 1px solid $gray-lighter;
-  color: gray;
-  &:first-child {
-    padding-left: 0;
-    border: 0;
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
   }
-  &:hover {
-    text-decoration: none;
-    color: blue;
+  strong {
+    display: block;
   }
-}
-strong {
-  display: block;
-}
 }
 .users.follow {
-padding: 0;
+  padding: 0;
 }

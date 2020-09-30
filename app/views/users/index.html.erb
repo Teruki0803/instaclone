@@ -1,2 +1,28 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>ユーザー一覧</h1>
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+     <% @users.each do |user| %>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <%= link_to user_path(user) do %>
+            <figure class="image is-128x128"  style="margin-right: auto;">
+              <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+              <div class= "content">
+              <%= link_to user.name,user_path(user) %>
+              </div>
+            </figure>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <div class="content-post">
+    投稿数：<%#= user.photos.count %>
+  </div>
+ 
+  <!--フォローボタンの実装-->
+  <% end %>
+ </div>
+ </div>
+</section>
