@@ -1,0 +1,56 @@
+<h1>写真詳細</h1>
+
+<div class="card-image">
+    <figure class="image is-4by3">
+        <%= attachment_image_tag @photo, :image %>
+    </figure>  
+ </div>
+ 
+ <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4"><%= @photo.title %></p>
+    　</div>
+    　<% if current_user.already_favorited? (@photo) %>
+    　 <%= link_to photo_favorites_path(@photo) do %>
+    　   <i class= "fas fa-heart"></i>
+    　 <% end %>
+    　<% else %>
+    　 <%= link_to photo_favorites_path(@photo) do %>
+    　   <i class= "far fa-heart"></i>
+    　 <% end %>
+    　<% end %>
+    </div>
+ 
+    <div class="content">
+      <table class="table is-narrow">
+         <tr>
+          <td><%= simple_format @photo.body %></td>
+    　   </tr>
+    　</table>
+    　
+    　
+      <% if @photo.user.id == current_user.id %>
+        <%= link_to "編集画面へ", edit_photo_path(@photo), class: "button is-success" %>
+      <% end %>
+     </div>
+</div>
+
+ <div class="column is-4">
+  <article class="panel is-link">
+       <p class="panel-heading">
+        By <%= @photo.user.name %>
+       </p>
+       <div class="panel-block">
+        <p class="control">
+          <%= @photo.user.profile %>
+        </p>
+       </div>
+      <%= link_to user_path(@photo.user), class: "panel-block" do %>
+        <span class="panel-icon">
+          <i class="fas fa-user" aria-hidden="true"></i>
+        </span>
+        <%= @photo.user.name %> さんのページへ
+      <% end %>
+  </article>
+</div>
